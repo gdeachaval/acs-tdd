@@ -13,11 +13,14 @@ public class UnitTest1 {
         this.speed = new Speed(new KmPerHour(), 10);
     }
 
-
     @Test
     public void test001_ASpeedValueWhenIncreasePercentShouldUpdateValue() {
         this.speed.increasePercentage(10d);
         assertThat(speed.getMagnitude(), is(11d));
     }
 
+    @Test (expected = NegativePercentageException.class)
+    public void test002_aSpeedValueWhenNegativePercentShouldThrowException() {
+        this.speed.increasePercentage(-10d);
+    }
 }

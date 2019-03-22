@@ -25,6 +25,7 @@ public class Speed {
     }
 
     public void increasePercentage(double percentage) {
-        this.magnitude *= (1+percentage/100);
+        if (percentage < 0) throw new NegativePercentageException("Percentage should be positive");
+        this.magnitude *= (1 + percentage / 100);
     }
 }
