@@ -12,10 +12,6 @@ public class Speed {
         return unit;
     }
 
-    public void setUnit(Unit unit) {
-        this.unit = unit;
-    }
-
     public double getMagnitude() {
         return magnitude;
     }
@@ -27,5 +23,10 @@ public class Speed {
     public void increasePercentage(double percentage) {
         if (percentage < 0) throw new NegativePercentageException("Percentage should be positive");
         this.magnitude *= (1 + percentage / 100);
+    }
+
+    public void changeUnit(Unit unit) {
+        // todo
+        this.unit = unit;
     }
 }

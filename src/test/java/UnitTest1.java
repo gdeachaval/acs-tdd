@@ -23,4 +23,11 @@ public class UnitTest1 {
     public void test002_aSpeedValueWhenNegativePercentShouldThrowException() {
         this.speed.increasePercentage(-10d);
     }
+
+    @Test
+    public void test003_aSpeedValueInKmPerHourWhenConvertedShouldConvertSuccessfuly() {
+        Speed otherSpeed = new Speed(new KmPerHour(), 36);
+        speed.changeUnit(new MetersPerSecond());
+        assertThat(otherSpeed.getMagnitude(), is(1d));
+    }
 }
