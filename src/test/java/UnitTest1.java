@@ -1,6 +1,9 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 public class UnitTest1 {
 
     private Speed speed;
@@ -13,7 +16,8 @@ public class UnitTest1 {
 
     @Test
     public void test001_ASpeedValueWhenIncreasePercentShouldUpdateValue() {
-
+        this.speed.increasePercentage(10d);
+        assertThat(speed.getMagnitude(), is(11d));
     }
 
 }

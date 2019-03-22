@@ -25,6 +25,6 @@ public class Speed {
     }
 
     public void increasePercentage(double percentage) {
-        this.magnitude
+        this.magnitude += this.magnitude * percentage;
     }
 }
